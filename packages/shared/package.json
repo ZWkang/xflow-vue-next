@@ -1,0 +1,52 @@
+{
+  "name": "@pkg-name/shared",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.9.0",
+  "description": "> description:",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "zwkang",
+    "email": "kang95630@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwkang/pkg-name.git"
+  },
+  "bugs": "https://github.com/zwkang/pkg-name/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "lint": "eslint --cache .",
+    "test": "vitest run",
+    "build": "tsup",
+    "start": "tsx src/index.ts",
+    "release": "bumpp && npm publish",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT"
+}
