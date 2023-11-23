@@ -1,7 +1,7 @@
 {
   "private": true,
   "packageManager": "pnpm@7.9.0",
-  "description": "> description:",
+  "description": "xflow-vue-next",
   "publishConfig": {
     "access": "public"
   },
@@ -42,7 +42,9 @@
     "update-deps": "pnpm update -i -r --latest",
     "preinstall": "only-allow pnpm",
     "setup": "pnpm install",
-    "publish": "pnpm publish -r"
+    "publish": "pnpm publish -r",
+    "start:demo": "pnpm --filter @xflow-vue-next/demo run dev",
+    "start:dev": "pnpm --filter xflow-vue-next run dev & pnpm run start:demo"
   },
   "license": "MIT"
 }

@@ -1,6 +1,6 @@
 # xflow-vue-next
 
-> description:
+> a xflow vue version implement. it is only using in vue3 project. and follow the newest xflow implement.
 
 ## Features
 
@@ -9,15 +9,27 @@
 - Eslint + Prettier good format and format checker
 - TypeScript, of course!!
 
+## Contribute start
+
+```
+pnpm setup
+cd packages/core && pnpm dev
+# start dev mode
+
+```
+
 ## Try it now
 
-## copy usage remove this please !!
+```bash
+pnpm add xflow-vue-next
+```
 
-a simple description
+```bash
 
-setup a default template to build your own tool, awesome !!
+pnpm i
+pnpm run start:dev
 
-find all xflow-vue-next and replace them all!!
+```
 
 ## LICENSE
 
