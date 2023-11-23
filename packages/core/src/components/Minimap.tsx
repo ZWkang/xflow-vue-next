@@ -2,6 +2,7 @@ import { NodeView } from '@antv/x6';
 import { MiniMap as M } from '@antv/x6-plugin-minimap';
 import { CSSProperties, defineComponent, toRefs, watchEffect, ref, toRaw, Ref } from 'vue';
 import { useGraphInstance } from '../hooks/useGraphInstance';
+import { useProps } from '../hooks/useProps';
 
 type IProps = Partial<Omit<M.Options, 'container'>> & {
   style?: CSSProperties;
@@ -47,8 +48,9 @@ function resolveValue(obj: {
 }
 
 export const Minimap = defineComponent({
-  setup(prop: IProps, ctx) {
-    const { style, className, simple, simpleNodeBackground, ...others } = toRefs(prop);
+  setup(p: IProps, ctx) {
+    const props = useProps<IProps>();
+    const { style, className, simple, simpleNodeBackground, ...others } = toRefs(props);
     const graph = useGraphInstance();
     const nodeRef = ref<HTMLDivElement | null>(null);
     watchEffect(() => {

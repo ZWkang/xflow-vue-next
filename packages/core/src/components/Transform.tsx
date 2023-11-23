@@ -2,6 +2,7 @@ import { Transform as T } from '@antv/x6-plugin-transform';
 import { watchEffect, defineComponent } from 'vue';
 
 import { useGraphInstance } from '../hooks/useGraphInstance';
+import { useProps } from '../hooks/useProps';
 
 type IProps = {
   resizing?: T.Options['resizing'];
@@ -9,8 +10,9 @@ type IProps = {
 };
 
 export const Transform = defineComponent({
-  setup(props: IProps, ctx) {
+  setup(p: IProps, ctx) {
     const graph = useGraphInstance();
+    const props = useProps<IProps>();
     const parseOptions = (options: T.Options['resizing'] | T.Options['rotating']) => {
       if (typeof options === 'boolean') {
         return options;

@@ -8,7 +8,7 @@ import { useGraphEvent, useGraphInstance, useGraphStore } from '../hooks';
 import type { ChangeItem } from '../store';
 import type { GraphOptions, NodeOptions, EdgeOptions, GraphModel } from '../types';
 import { flatten } from '../util';
-import { useGraph } from '../context';
+import { useProps } from '../hooks/useProps';
 
 const INNER_CALL = '__inner__';
 
@@ -34,12 +34,13 @@ const preprocess = (key: keyof Cell.Properties, value: any, graph: Graph) => {
 
 export const XFlowState = defineComponent({
   setup(
-    props: Pick<
-      GraphOptions,
-      'centerView' | 'centerViewOptions' | 'fitView' | 'fitViewOptions' | 'connectionEdgeOptions'
-    >,
+    p: Pick<GraphOptions, 'centerView' | 'centerViewOptions' | 'fitView' | 'fitViewOptions' | 'connectionEdgeOptions'>,
     ctx,
   ) {
+    const props =
+      useProps<
+        Pick<GraphOptions, 'centerView' | 'centerViewOptions' | 'fitView' | 'fitViewOptions' | 'connectionEdgeOptions'>
+      >();
     const graph = useGraphInstance();
     const updateNode = useGraphStore((state) => state.updateNode);
     const updateEdge = useGraphStore((state) => state.updateEdge);

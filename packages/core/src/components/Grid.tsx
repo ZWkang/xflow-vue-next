@@ -2,6 +2,7 @@ import { type Registry } from '@antv/x6';
 import { defineComponent, watchEffect } from 'vue';
 
 import { useGraphInstance } from '../hooks/useGraphInstance';
+import { useProps } from '../hooks/useProps';
 
 type GridTypes = keyof Registry.Grid.Presets;
 interface GridProps<T extends GridTypes> {
@@ -10,7 +11,8 @@ interface GridProps<T extends GridTypes> {
 }
 
 export const Grid = defineComponent({
-  setup(props: GridProps<GridTypes>, ctx) {
+  setup(p: GridProps<GridTypes>, ctx) {
+    const props = useProps<GridProps<GridTypes>>();
     const graph = useGraphInstance();
     watchEffect(() => {
       const _graph = graph.value;
