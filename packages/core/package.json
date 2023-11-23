@@ -1,0 +1,87 @@
+{
+  "name": "xflow-vue-next",
+  "version": "0.0.3",
+  "packageManager": "pnpm@7.9.0",
+  "description": "> simple xflow vue-next implement from https://github.com/antvis/XFlow",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "zwkang",
+    "email": "kang95630@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwkang/xflow-vue-next.git"
+  },
+  "bugs": "https://github.com/zwkang/xflow-vue-next/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/typing/src/index.d.ts",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    }
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/typing/src/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/typing/*",
+        "dist/typing/src/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "lint": "eslint --cache .",
+    "test": "vitest run",
+    "build": "tsup",
+    "start": "tsx src/index.ts",
+    "release": "npm publish",
+    "bump:version": "bumpp",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "bumpp": "^8.2.1",
+    "colorette": "^2.0.20",
+    "esbuild-plugin-svgr": "^2.1.0",
+    "eslint": "^8.22.0",
+    "eslint-config-alloy": "^4.6.2",
+    "prettier": "^2.7.1",
+    "tsup": "^8.0.0",
+    "tsx": "^3.8.2",
+    "typescript": "^4.7.4",
+    "vitest": "^0.22.1",
+    "zwkang-prettier-config": "^0.0.3"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@antv/x6": "^2.15.6",
+    "@antv/x6-plugin-clipboard": "^2.1.6",
+    "@antv/x6-plugin-dnd": "^2.1.1",
+    "@antv/x6-plugin-export": "^2.1.6",
+    "@antv/x6-plugin-history": "^2.2.4",
+    "@antv/x6-plugin-keyboard": "^2.2.1",
+    "@antv/x6-plugin-minimap": "^2.0.6",
+    "@antv/x6-plugin-scroller": "^2.0.10",
+    "@antv/x6-plugin-selection": "^2.2.1",
+    "@antv/x6-plugin-snapline": "^2.1.7",
+    "@antv/x6-plugin-transform": "^2.1.8",
+    "@antv/x6-react-shape": "^2.2.2",
+    "vue": "^3.3.8"
+  },
+  "dependencies": {
+    "unplugin-vue-jsx": "^0.2.1"
+  }
+}
