@@ -1,5 +1,11 @@
 # xflow-vue-next
 
+## 0.0.5
+
+### Patch Changes
+
+- update docs demo and depend
+
 ## 0.0.4
 
 ### Patch Changes

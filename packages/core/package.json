@@ -1,6 +1,6 @@
 {
   "name": "xflow-vue-next",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "packageManager": "pnpm@7.9.0",
   "description": "> simple xflow vue-next implement from https://github.com/antvis/XFlow",
   "publishConfig": {
