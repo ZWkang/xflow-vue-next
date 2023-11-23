@@ -36,7 +36,7 @@
   },
   "scripts": {
     "changeset": "changeset",
-    "build": "pnpm --filter @pkg-name/* run build",
+    "build": "pnpm --filter @xflow-vue-next/* run build",
     "release:version": "changeset version",
     "release": "pnpm build && changeset publish",
     "update-deps": "pnpm update -i -r --latest",

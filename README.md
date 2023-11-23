@@ -1,4 +1,4 @@
-# pkg-name
+# xflow-vue-next
 
 > description:
 
@@ -17,7 +17,7 @@ a simple description
 
 setup a default template to build your own tool, awesome !!
 
-find all pkg-name and replace them all!!
+find all xflow-vue-next and replace them all!!
 
 ## LICENSE
 

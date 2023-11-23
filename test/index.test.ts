@@ -1,6 +1,6 @@
-import { test, assert } from "vitest";
-import { name } from "../src";
+import { test, assert } from 'vitest';
+import { name } from '../src';
 
-test("simple", () => {
-  assert.equal(name, "pkg-name");
+test('simple', () => {
+  assert.equal(name, 'xflow-vue-next');
 });
