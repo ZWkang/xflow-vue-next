@@ -1,5 +1,12 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+import { createWebHashHistory, createRouter, setupDataFetchingGuard } from 'vue-router/auto';
 
-createApp(App).mount('#app')
+const router = createRouter({
+  history: createWebHashHistory(),
+});
+
+setupDataFetchingGuard(router);
+
+createApp(App).use(router).mount('#app');
