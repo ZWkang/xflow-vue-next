@@ -42,7 +42,7 @@ export type Actions = {
   clearChangeList: () => void;
 };
 
-export type GraphStore = MarkRef<State> & Actions;
+export type GraphStore = ReturnType<typeof createGraphStore>;
 
 export const createGraphStore = () => {
   const nodes = ref<NodeOptions[]>([]);
