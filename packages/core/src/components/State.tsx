@@ -2,7 +2,7 @@
 import type { Graph, EventArgs, Cell } from '@antv/x6';
 import { FunctionExt, ObjectExt, Point } from '@antv/x6';
 
-import { watchEffect, defineComponent } from 'vue';
+import { defineComponent, watch } from 'vue';
 
 import { useGraphEvent, useGraphInstance, useGraphStore } from '../hooks';
 import type { ChangeItem } from '../store';
@@ -170,11 +170,15 @@ export const XFlowState = defineComponent({
       clearChangeList();
     };
 
-    watchEffect(() => {
-      if (graph.value && changeList.value.length) {
-        handleGraphChange(graph.value, changeList.value);
-      }
-    });
+    watch(
+      () => changeList.value,
+      (val) => {
+        if (graph.value && val.length) {
+          handleGraphChange(graph.value, val);
+        }
+      },
+      { deep: true },
+    );
 
     // Add cells for internal operations
     useGraphEvent('cell:added', ({ cell, options }) => {
